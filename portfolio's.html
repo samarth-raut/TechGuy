@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samarth's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Custom hover effects */
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #3b82f6;
+    }
+    .portfolio-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color: #f8fafc;
+    }
+    .back-button {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #2563eb;
+      transform: scale(1.05);
+    }
+    /* Fade-in animation for sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Staggered slide-in for portfolio cards */
+    .portfolio-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .portfolio-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Header animation */
+    .header-text {
+      animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Samarth</h1>
+        </div>
+        <div class="flex items-center">
+          <!-- Hamburger Menu for Mobile -->
+          <button id="menu-toggle" class="sm:hidden text-gray-600 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <!-- Navigation Links -->
+          <div id="menu" class="hidden sm:flex sm:items-center sm:space-x-4 absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none">
+            <div class="flex flex-col sm:flex-row sm:space-x-4 p-4 sm:p-0">
+              <a href="index.html#hero" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Home</a>
+              <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">About</a>
+              <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Projects</a>
+              <a href="index.html#portfolio" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Portfolio</a>
+              <a href="index.html#terms" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Terms</a>
+              <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portfolio Hero Section -->
+  <section id="portfolio-hero" class="pt-24 pb-12 sm:pb-20 bg-gradient-to-b from-blue-50 to-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 header-text">My Portfolio</h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Discover a curated collection of my UI/UX work, categorized by skill level, showcasing my expertise in creating intuitive and visually appealing designs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Beginner Portfolio Section -->
+  <section id="beginner-portfolio" class="py-12 sm:py-20 bg-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Beginner Portfolio</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Landing Page UI</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Designed a clean and minimalistic landing page for a startup, focusing on clear typography and vibrant colors.
+          </p>
+                  <a href="information.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Mobile App Mockup</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Created mockups for a mobile app with a focus on intuitive navigation and simple user flows.
+          </p>
+               <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Basic Wireframes</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Developed low-fidelity wireframes for a website to outline structure and layout for client review.
+          </p>
+                   <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Style Guide Creation</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Crafted a basic style guide for a web app, defining colors, typography, and button styles.
+          </p>
+                <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Icon Design</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Designed a set of custom icons for a mobile application to enhance visual consistency.
+          </p>
+                   <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">User Flow Diagram</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Created a user flow diagram for a simple e-commerce checkout process to improve usability.
+          </p>
+                   <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medium Portfolio Section -->
+  <section id="medium-portfolio" class="py-12 sm:py-20 bg-white fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Medium Portfolio</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">App Redesign</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Redesigned a mobile app interface to improve user engagement with modern design patterns and animations.
+          </p>
+                    <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">User Testing Sessions</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Conducted user testing sessions to identify pain points and optimize the UX for a productivity app.
+          </p>
+            <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Interactive Prototype</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Built an interactive prototype for a travel booking app to validate user flows and design concepts.
+          </p>
+                    <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Dashboard UI Design</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Designed a responsive dashboard UI for a SaaS product with a focus on data visualization and usability.
+          </p>
+                    <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Accessibility Audit</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Performed an accessibility audit for a website, ensuring WCAG compliance and improved inclusivity.
+          </p>
+                  <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Persona Development</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Created user personas for a fitness app to guide design decisions and enhance user-centric design.
+          </p>
+                    <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Portfolio Section -->
+  <section id="advanced-portfolio" class="py-12 sm:py-20 bg-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Advanced Portfolio</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Design System Creation</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Developed a comprehensive design system for a large-scale web application, ensuring consistency across platforms.
+          </p>
+                  <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">End-to-End UX Research</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Conducted end-to-end UX research for an e-learning platform, from user interviews to usability testing and iteration.
+          </p>
+            <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">High-Fidelity Prototype</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Built a high-fidelity prototype for a financial app with complex interactions and animations for stakeholder approval.
+          </p>
+                 <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Cross-Platform UI Design</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Designed a cohesive UI for a cross-platform app (web, iOS, Android) with adaptive layouts and consistent branding.
+          </p>
+                    <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Voice Interface Design</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Designed a voice-based UI for a smart assistant app, focusing on conversational flows and user feedback.
+          </p>
+          <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="portfolio-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">User Journey Mapping</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            Created detailed user journey maps for a healthcare app to optimize onboarding and user retention.
+          </p>
+          <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="index.html" class="inline-block bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded最新的button font-semibold back-button">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>© 2025 Samarth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100); // Staggered animation for portfolio cards
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => observer.observe(element));
+    portfolioCards.forEach(card => observer.observe(card));
+
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

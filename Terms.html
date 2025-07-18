@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samarth's Terms and Conditions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Custom hover effects */
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #3b82f6;
+    }
+    .terms-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .terms-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color:rgba(0, 0, 0, 0.15);
+      background-color: #f8fafc;
+    }
+    .back-button {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .back-button:hover {
+      background-color: #2563eb;
+      transform: scale(1.05);
+    }
+    /* Fade-in animation for sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /*_slide-in for terms cards */
+    .terms-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .terms-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Header animation */
+    .header-text {
+      animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Samarth</h1>
+        </div>
+        <div class="flex items-center">
+          <!-- Hamburger Menu for Mobile -->
+          <button id="menu-toggle" class="sm:hidden text-gray-600 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <!-- Navigation Links -->
+          <div id="menu" class="hidden sm:flex sm:items-center sm:space-x-4 absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none">
+            <div class="flex flex-col sm:flex-row sm:space-x-4 p-4 sm:p-0">
+              <a href="index.html#hero" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Home</a>
+              <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">About</a>
+              <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Projects</a>
+              <a href="portfolio's.html" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Portfolio</a>
+              <a href="index.html#terms" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Terms</a>
+              <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Terms Hero Section -->
+  <section id="terms-hero" class="pt-24 pb-12 sm:pb-20 bg-gradient-to-b from-blue-50 to-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 header-text">Terms and Conditions</h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Below are the detailed terms and conditions governing my services, outlining expectations, responsibilities, and agreements for all projects.
+      </p>
+    </div>
+  </section>
+
+  <!-- General Terms Section -->
+  <section id="general-terms" class="py-12 sm:py-20 bg-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">General Terms</h2>
+      <div class="grid grid-cols-1 gap-4 sm:gap-6">
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">1. Acceptance of Terms</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            By engaging my services, clients agree to abide by these terms and conditions, which form a legally binding agreement. These terms may be updated periodically, and continued engagement implies acceptance of the updated terms.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">2. Scope of Services</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Services include UI/UX design, web development, and related consulting as agreed upon in project proposals. Any additional work beyond the agreed scope will require a separate agreement and may incur additional costs.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">3. Client Responsibilities</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Clients are responsible for providing accurate and timely information, feedback, and resources necessary for project completion. Delays in providing these may impact project timelines and deliverables.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Agreements Section -->
+  <section id="project-agreements" class="py-12 sm:py-20 bg-white fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Project Agreements</h2>
+      <div class="grid grid-cols-1 gap-4 sm:gap-6">
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">1. Project Timeline</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Project timelines are outlined in the project proposal. Delays caused by client feedback or external factors may extend deadlines, and I will communicate any changes promptly.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">2. Revisions</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Up to three rounds of revisions are included per project phase, as specified in the agreement. Additional revisions may incur extra charges, agreed upon in advance.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">3. Termination</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Either party may terminate the project with written notice. The client is responsible for payment for all work completed up to the termination date.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intellectual Property Section -->
+  <section id="intellectual-property" class="py-12 sm:py-20 bg-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Intellectual Property</h2>
+      <div class="grid grid-cols-1 gap-4 sm:gap-6">
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">1. Ownership</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Upon full payment, clients receive ownership of the final deliverables. I retain the right to showcase the work in my portfolio unless otherwise agreed.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">2. Third-Party Assets</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Any third-party assets (e.g., fonts, images) used in projects require proper licensing, and clients are responsible for securing such licenses unless provided by me.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">3. Confidentiality</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            All client-provided information is treated as confidential and will not be shared without consent, except as required by law.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Terms Section -->
+  <section id="payment-terms" class="py-12 sm:py-20 bg-white fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Payment Terms</h2>
+      <div class="grid grid-cols-1 gap-4 sm:gap-6">
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">1. Payment Schedule</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Payments are typically split into milestones: 50% deposit upon project start and 50% upon completion, unless otherwise agreed in the project proposal.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">2. Late Payments</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Payments overdue by more than 14 days may incur a late fee of 5% of the outstanding amount, and work may be paused until payment is received.
+          </p>
+        </div>
+        <div class="terms-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">3. Refunds</h3>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Refunds are not provided for work already completed. In case of project cancellation, clients will be invoiced for work completed up to that point.
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="index.html" class="inline-block bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold back-button">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>© 2025 Samarth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const termsCards = document.querySelectorAll('.terms-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100); // Staggered animation for terms cards
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => observer.observe(element));
+    termsCards.forEach(card => observer.observe(card));
+
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

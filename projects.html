@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samarth's Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Custom hover effects */
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #3b82f6;
+    }
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color: #f8fafc;
+    }
+    .back-button, .view-details-button {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .back-button:hover, .view-details-button:hover {
+      background-color: #2563eb;
+      transform: scale(1.05);
+    }
+    /* Fade-in animation for sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Staggered slide-in for project cards */
+    .project-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Header animation */
+    .header-text {
+      animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Samarth</h1>
+        </div>
+        <div class="flex items-center">
+          <!-- Hamburger Menu for Mobile -->
+          <button id="menu-toggle" class="sm:hidden text-gray-600 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <!-- Navigation Links -->
+          <div id="menu" class="hidden sm:flex sm:items-center sm:space-x-4 absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none">
+            <div class="flex flex-col sm:flex-row sm:space-x-4 p-4 sm:p-0">
+              <a href="index.html#hero" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Home</a>
+              <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">About</a>
+              <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Projects</a>
+              <a href="index.html#portfolio" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Portfolio</a>
+              <a href="index.html#terms" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Terms</a>
+              <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-500 py-2 sm:py-0">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Hero Section -->
+  <section id="projects-hero" class="pt-24 pb-12 sm:pb-20 bg-gradient-to-b from-blue-50 to-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 header-text">My Projects</h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Explore a collection of my work, categorized by skill level, showcasing innovative UI/UX designs and development projects crafted with precision and creativity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Beginner Projects Section -->
+  <section id="beginner-projects" class="py-12 sm:py-20 bg-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Beginner Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">To-Do List App</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A simple web-based to-do list application with add, edit, and delete functionality, featuring a clean and minimalistic interface.
+          </p>
+          <a href="project-details/todo-list-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Personal Blog</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A static blog website with a responsive layout, designed to showcase articles with a focus on readability and simple navigation.
+          </p>
+          <a href="project-details/personal-blog.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Calculator</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A web-based calculator with basic arithmetic operations, designed with a user-friendly interface and responsive design.
+          </p>
+          <a href="project-details/calculator.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Weather Widget</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A simple weather display widget that fetches and displays current weather data for a user-specified location.
+          </p>
+          <a href="project-details/weather-widget.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Portfolio Landing Page</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A single-page portfolio website with a focus on clean design and basic animations to showcase personal projects.
+          </p>
+          <a href="project-details/portfolio-landing-page.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Image Gallery</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A responsive image gallery with lightbox functionality, allowing users to view images in a modal view.
+          </p>
+          <a href="project-details/image-gallery.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medium Projects Section -->
+  <section id="medium-projects" class="py-12 sm:py-20 bg-white fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Medium Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Task Management App</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A task management app with user authentication, task categorization, and local storage for data persistence.
+          </p>
+          <a href="project-details/task-management-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">E-Commerce Storefront</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A responsive e-commerce storefront with product filtering, cart functionality, and a mock checkout process.
+          </p>
+          <a href="project-details/ecommerce-storefront.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Chat Application</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A real-time chat application with group chat support and user presence indicators, built with a simple backend.
+          </p>
+          <a href="project-details/chat-application.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Recipe Finder</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A recipe search app that allows users to find recipes based on ingredients, with a clean and intuitive UI.
+          </p>
+          <a href="project-details/recipe-finder.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Event Planner</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            An event planning app with calendar integration, event reminders, and a responsive design for mobile and desktop.
+          </p>
+          <a href="project-details/event-planner.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Note-Taking App</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A note-taking application with rich text editing, tagging, and search functionality for better organization.
+          </p>
+          <a href="project-details/note-taking-app.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Projects Section -->
+  <section id="advanced-projects" class="py-12 sm:py-20 bg-gray-100 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-blue-600">Advanced Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Data Analytics Dashboard</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A comprehensive dashboard for real-time data visualization, featuring interactive charts and customizable widgets.
+          </p>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Social Media Platform</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A full-featured social media platform with user profiles, post interactions, and real-time notifications.
+          </p>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Fitness Tracking App</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A mobile-first fitness app with goal tracking, workout logging, and integration with wearable devices.
+          </p>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">E-Learning Platform</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            An e-learning platform with course management, video streaming, and progress tracking for students and instructors.
+          </p>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">Inventory Management System</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A robust inventory management system with barcode scanning, stock tracking, and reporting features.
+          </p>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+                    <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+        <div class="project-card bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-blue-600">AI-Powered Chatbot</h3>
+          <p class="text-gray-600 text-sm sm:text-base mb-4">
+            A chatbot application with natural language processing for customer support, integrated with a web platform.
+          </p>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">View Details</a>
+          <a href="infromation.pdf" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm view-details-button">Buy now </a>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="index.html#projects" class="inline-block bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold back-button">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>© 2025 Samarth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100); // Staggered animation for project cards
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => observer.observe(element));
+    projectCards.forEach(card => observer.observe(card));
+
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
